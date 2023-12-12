@@ -15,7 +15,9 @@ jobs:
     env: 
       path: test/android
     defaults:
-      working-directory: test/android
+      run:
+        working-directory: test/android
+
     steps:
       - uses: actions/checkout@v4.1.0
         with:
