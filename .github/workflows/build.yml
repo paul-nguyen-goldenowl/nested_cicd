@@ -33,9 +33,14 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           cache: true
+		  
+      - name: TEST 0
+        run: |
+          ls
+		  
       - name: building
         run:
-          flutter build apk
+          flutter build apk --verbose
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2.9.0
         with:
