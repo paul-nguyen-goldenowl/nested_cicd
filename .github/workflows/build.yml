@@ -33,7 +33,7 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           cache: true
-      - use: building
+      - name: building
         run:
           flutter build
       - name: Setup Gradle
