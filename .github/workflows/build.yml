@@ -28,6 +28,12 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
           cache: 'gradle'
+		  
+            
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          cache: true
 
       - use: building
         run:
@@ -38,11 +44,7 @@ jobs:
           gradle-version: current
           gradle-home-cache-cleanup: true
             # build-root-directory: ${{env.path}}
-            
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          cache: true
+
           
       - name: TEST
         run: |
