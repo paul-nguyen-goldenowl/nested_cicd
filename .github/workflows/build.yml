@@ -14,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     env: 
       path: test/android
-
+    defaults:
+      working-directory: test/android
     steps:
-
       - uses: actions/checkout@v4.1.0
         with:
           ref: ${{ github.ref }}
@@ -32,7 +32,7 @@ jobs:
         with:
           gradle-version: current
           gradle-home-cache-cleanup: true
-          build-root-directory: ${{env.path}}
+            # build-root-directory: ${{env.path}}
 
       - name: TEST
         run: |
